@@ -24,7 +24,7 @@ def main(use_cuda=True, model_save_path="../../saved_models"):
     dataset.protein_expression = dataset.protein_expression[:, :-3]
     dataset.protein_names = dataset.protein_names[:-3]
 
-    totalvae = TOTALVI(dataset.nb_genes, len(dataset.protein_names))
+    totalvae = TOTALVI(dataset.nb_genes, len(dataset.protein_names), n_latent=25)
 
     use_cuda = use_cuda
     lr = 8e-3
@@ -49,7 +49,7 @@ def main(use_cuda=True, model_save_path="../../saved_models"):
         early_stopping_kwargs=early_stopping_kwargs,
     )
 
-    n_epochs = 300
+    n_epochs = 400
     trainer.train(n_epochs=n_epochs, lr=lr)
 
     torch.save(
