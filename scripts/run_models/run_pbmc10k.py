@@ -27,7 +27,7 @@ def main(use_cuda=True, model_save_path="../../saved_models"):
     totalvae = TOTALVI(dataset.nb_genes, len(dataset.protein_names))
 
     use_cuda = use_cuda
-    lr = 1e-2
+    lr = 8e-3
     early_stopping_kwargs = {
         "early_stopping_metric": "elbo",
         "save_best_state_metric": "elbo",
