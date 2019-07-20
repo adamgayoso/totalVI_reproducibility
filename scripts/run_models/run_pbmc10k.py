@@ -54,7 +54,7 @@ def main(use_cuda=True, model_save_path="../../saved_models"):
 
     torch.save(
         {"model_state_dict": totalvae.state_dict()},
-        model_save_path + "pbmc10k_totalVI.pt",
+        model_save_path + "/pbmc10k_totalVI.pt",
     )
 
 
