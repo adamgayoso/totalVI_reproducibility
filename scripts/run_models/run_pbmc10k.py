@@ -42,8 +42,8 @@ def main(use_cuda=True, model_save_path="../../saved_models"):
     trainer = TotalTrainer(
         totalvae,
         dataset,
-        train_size=0.93,
-        test_size=0.02,
+        train_size=0.90,
+        test_size=0.05,
         use_cuda=use_cuda,
         frequency=1,
         early_stopping_kwargs=early_stopping_kwargs,
